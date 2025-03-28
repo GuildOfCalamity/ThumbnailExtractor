@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "FindString": {
+      "commandName": "Project",
+      "commandLineArgs": "D:\\Cache"
+    }
+  }
+}

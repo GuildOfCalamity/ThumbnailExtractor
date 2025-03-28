@@ -1,0 +1,67 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+      
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0-windows10.0.19041.0</TargetFramework>
+    <TargetPlatformMinVersion>10.0.17763.0</TargetPlatformMinVersion>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+      
+    <Title>Thumbnail Extractor</Title>
+    <LangVersion>latest</LangVersion>
+    <Version>1.0.0.0</Version>
+    <FileVersion>1.0.0.0</FileVersion>
+    <AssemblyVersion>1.0.0.0</AssemblyVersion>
+    <PackageId>ThumbnailExtractor2025</PackageId>
+    <Authors>The Guild</Authors>
+    <ApplicationIcon>AppIcon.ico</ApplicationIcon>
+    
+    <WindowsPackageType>None</WindowsPackageType>
+    <WindowsAppSDKSelfContained>true</WindowsAppSDKSelfContained>
+    
+    <!-- Make the output self-contained -->
+    <PublishSingleFile>true</PublishSingleFile>
+      
+    <!-- Trim unused dependencies for smaller size -->
+    <PublishTrimmed>false</PublishTrimmed>
+      
+    <!-- Removes all unnecessary pathing that MS adds and makes the output match the traditional .NET Framework builds -->
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
+      
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+      <!-- Include the PDB symbols in the EXE. -->
+      <DebugType>embedded</DebugType>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+     <!-- Include the PDB symbols in the EXE. -->
+    <DebugType>embedded</DebugType>
+  </PropertyGroup>
+
+    <ItemGroup>
+      <!-- 
+      NOTE: Do not try and use WinUI3 packaging here, e.g.
+      
+         - PackageReference Include="Microsoft.Windows.SDK.BuildTools"
+         - PackageReference Include="Microsoft.WindowsAppSDK"
+      
+      The console executable will not load/run properly.
+      
+      Once the project is built you'll only require the following files for portability:
+      
+        - FindString.exe
+        - FindString.dll
+        - FindString.runtimeconfig.json
+        
+      This assumes the client machine has the .NET 8 runtime installed.
+      -->
+        <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">
+            <Version>6.2.14</Version>
+        </PackageReference>
+    </ItemGroup>
+
+</Project>
