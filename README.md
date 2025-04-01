@@ -1,4 +1,4 @@
-## 💻 Console - UWP/WinAppSDK Demo
+## 💻 Console - UWP Demo
 
 ![Icon](./AppIcon.png)
 
@@ -33,3 +33,4 @@
 
 ## 📋 Proofing
 * This application was compiled and tested using *VisualStudio* 2022 on *Windows 10/11* versions **22H2**, **21H2**, **21H1**, and **23H2**.
+
