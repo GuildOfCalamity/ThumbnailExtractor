@@ -1,6 +1,6 @@
 {
   "profiles": {
-    "FindString": {
+    "Extractor": {
       "commandName": "Project",
       "commandLineArgs": "D:\\Cache"
     }
